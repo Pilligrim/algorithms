@@ -44,25 +44,66 @@ public class Array {
     }
 
     public void append(int value) {
+        verifyCapacity();
+        arr[size++] = value;
+        isSorted = false;
+    }
+
+    public void insert(int inx, int value) {
+        if (inx < 0 || inx >= size) {
+            throw new ArrayIndexOutOfBoundsException(inx);
+        } else {
+            verifyCapacity();
+            copyRightOfInx(inx);
+            arr[inx] = value;
+            size++;
+        }
+    }
+
+    public void verifyCapacity() {
         if (size >= arr.length) {
             increaseCapacity();
         }
-        arr[size++] = value;
-        isSorted = false;
+    }
+
+    private void copyLeftOfInx(int inx) {
+        System.arraycopy(arr, inx + 1, arr, inx, size - inx - 1);
+    }
+
+    private void copyRightOfInx(int inx) {
+        System.arraycopy(arr, inx, arr, inx + 1, size - inx - 1);
     }
 
     public int deleteLast() {
         if (size == 0)
             throw new ArrayIndexOutOfBoundsException(-1);
-
         return arr[--size];
     }
 
-    // homework
-    // insert(index, value);
-    // delete(val);
-    // delete(index);
-    // deleteAll();
+    public boolean deleteAll(int value) {
+        boolean result = false;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == value) {
+                delete(i--);
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    void deleteAll() {
+        size = 0;
+    }
+
+
+    public boolean delete(int index) {
+        if (index >= size || index < 0) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
+        copyLeftOfInx(index);
+        size--;
+        return true;
+    }
 
     @Override
     public String toString() {
@@ -115,37 +156,76 @@ public class Array {
         arr[b] = temp;
     }
 
-    public void sortBubble() {
+    public int sortBubble() {
+        int count = 0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - 1; j++) {
-                if (arr[j] > arr[j + 1])
+                if (arr[j] > arr[j + 1]) {
+                    count++;
                     swap(j, j + 1);
+                }
             }
         }
         isSorted = true;
+        return count;
     }
 
-    public void sortSelect() {
+    public int sortSelect() {
+        int count = 0;
         for (int flag = 0; flag < size; flag++) {
             int cMin = flag;
-            for (int rem = flag + 1; rem < size; rem++)
+            for (int rem = flag + 1; rem < size; rem++) {
+                count++;
                 if (arr[rem] < arr[cMin])
                     cMin = rem;
+            }
             swap(flag, cMin);
         }
         isSorted = true;
+        return count;
     }
 
-    public void sortInsert() {
+    public int sortInsert() {
+        int count = 0;
         for (int out = 0; out < size; out++) {
             int temp = arr[out];
             int in = out;
             while (in > 0 && arr[in - 1] >= temp) {
+                count++;
                 arr[in] = arr[in - 1];
                 in--;
             }
             arr[in] = temp;
         }
         isSorted = true;
+        return count;
+    }
+
+    public int countingSort() {
+        int count = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int element : arr) {
+            count++;
+            if (element < min) {
+                min = element;
+            }
+            if (element > max) {
+                max = element;
+            }
+        }
+        int[] elemCounts = new int[max - min + 1];
+        for (int elem : arr) {
+            count++;
+            elemCounts[elem - min]++;
+        }
+        int arrInx = 0;
+        for (int i = 0; i < elemCounts.length; i++) {
+            for (int j = elemCounts[i]; j > 0; j--) {
+                count++;
+                arr[arrInx++] = i + min;
+            }
+        }
+        return count;
     }
 }
