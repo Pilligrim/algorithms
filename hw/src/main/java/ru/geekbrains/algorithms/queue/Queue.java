@@ -1,17 +1,17 @@
-package ru.geekbrains.algorithms.stack;
+package ru.geekbrains.algorithms.queue;
 
 import java.util.NoSuchElementException;
 
-public class Queue {
-    private int capacity;
-    private int[] queue;
-    private int head;
-    private int tail;
-    private int items;
+public class Queue<T> {
+    protected int capacity;
+    protected Object[] queue;
+    protected int head;
+    protected int tail;
+    protected int items;
 
     public Queue(int capacity) {
         this.capacity = capacity;
-        queue = new int[capacity];
+        queue = new Object[capacity];
         head = 0;
         tail = -1;
         items = 0;
@@ -29,10 +29,10 @@ public class Queue {
         return items;
     }
 
-    public void insert(int value) {
+    public void insert(T value) {
         if (isFull()) {
             capacity *= 2;
-            int[] newQ = new int[capacity];
+            Object[] newQ = new Object[capacity];
             if (tail >= head) {
                 System.arraycopy(queue, 0, newQ, 0, queue.length);
             } else {
@@ -43,30 +43,24 @@ public class Queue {
             }
             queue = newQ;
         }
-        if (tail == capacity - 1)
+        if (tail == capacity - 1){
             tail = -1;
+        }
         queue[++tail] = value;
         items++;
     }
 
-    public int remove() {
+    public T remove() {
         if (isEmpty())
             throw new NoSuchElementException("Queue is empty");
-        int temp = queue[head++];
+        T temp = (T) queue[head++];
         head %= capacity; // if (head == capacity) head = 0;
         items--;
         return temp;
     }
 
-    public int peek() {
-        return queue[head];
+    public T peek() {
+        return (T) queue[head];
     }
-
-    //t[h.........]
-    // [h||||||t..]
-    // [....h||t..]
-    // [|t..h|||||]
-    // [|t..................]
-
 }
 
