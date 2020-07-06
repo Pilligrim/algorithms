@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms;
+package ru.geekbrains.algorithms.math;
 
 public class SuperCalculator {
     // Сложность O(n)
