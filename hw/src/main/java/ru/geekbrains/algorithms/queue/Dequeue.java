@@ -1,5 +1,7 @@
 package ru.geekbrains.algorithms.queue;
 
+import java.util.Deque;
+
 public class Dequeue<T> extends Queue<T>{
     public Dequeue(int capacity) {
         super(capacity);
