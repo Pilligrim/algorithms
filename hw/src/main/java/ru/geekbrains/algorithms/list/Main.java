@@ -1,5 +1,7 @@
 package ru.geekbrains.algorithms.list;
 
+import ru.geekbrains.algorithms.Cat;
+
 public class Main {
     public static void main(String[] args) {
         RelatedList<Cat> rl = new RelatedList<>();
