@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.list;
+package ru.geekbrains.algorithms;
 
 import java.util.Objects;
 

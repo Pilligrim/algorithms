@@ -4,7 +4,8 @@ import java.util.Objects;
 
 public class Node <T>{
     T elem;
-    Node next;
+    Node<T> next;
+    Node<T> prev;
 
     public Node(T elem) {
         this.elem = elem;
@@ -19,7 +20,7 @@ public class Node <T>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Node node = (Node) o;
+        Node<T> node = (Node<T>) o;
         return elem.equals(node.elem);
     }
 

@@ -1,8 +1,10 @@
 package ru.geekbrains.algorithms.list;
 
+import ru.geekbrains.algorithms.Cat;
+
 public class Main {
     public static void main(String[] args) {
-        RelatedList rl = new RelatedList();
+        RelatedList<Cat> rl = new RelatedList<>();
         rl.push(new Cat(2, "cat1"));
         rl.push(new Cat(3, "cat2"));
         rl.push(new Cat(4, "cat3"));
