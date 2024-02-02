@@ -1,6 +1,6 @@
 package ru.geekbrains.algorithms.collections.list;
 
-import ru.geekbrains.algorithms.Cat;
+import ru.geekbrains.algorithms.collections.Cat;
 
 public class Main {
     public static void main(String[] args) {
