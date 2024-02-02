@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.stack;
+package ru.geekbrains.algorithms.collections.stack;
 
 public class Brackets {
     public static boolean check(String input) {

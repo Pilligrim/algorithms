@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.list;
+package ru.geekbrains.algorithms.collections.list;
 
 public class RelatedList<T> {
     private Node<T> head;

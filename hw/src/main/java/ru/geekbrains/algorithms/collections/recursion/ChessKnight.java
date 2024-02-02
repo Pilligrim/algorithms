@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.recursion;
+package ru.geekbrains.algorithms.collections.recursion;
 
 public class ChessKnight {
     public static void main(String[] args) {

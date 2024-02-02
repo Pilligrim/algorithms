@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.arrays;
+package ru.geekbrains.algorithms.collections.arrays;
 
 public class Array {
     private int[] arr;

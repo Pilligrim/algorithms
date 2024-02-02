@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.trees;
+package ru.geekbrains.algorithms.collections.trees;
 
 import java.util.ArrayList;
 import java.util.List;

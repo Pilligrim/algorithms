@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.recursion;
+package ru.geekbrains.algorithms.collections.recursion;
 
 public class Simple {
     private static void iterPrint(int i) {

@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.recursion;
+package ru.geekbrains.algorithms.collections.recursion;
 
 public class Hanoi {
     public static void move(int n, int from, int to) {

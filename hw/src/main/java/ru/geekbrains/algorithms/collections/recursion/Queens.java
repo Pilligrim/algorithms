@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.recursion;
+package ru.geekbrains.algorithms.collections.recursion;
 
 public class Queens {
     private static int[][] desk;

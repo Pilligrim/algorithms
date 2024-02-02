@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.queue;
+package ru.geekbrains.algorithms.collections.queue;
 
 import java.util.Comparator;
 

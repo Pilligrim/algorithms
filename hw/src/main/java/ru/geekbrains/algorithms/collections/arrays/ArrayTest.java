@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.arrays;
+package ru.geekbrains.algorithms.collections.arrays;
 
 public class ArrayTest {
     public static void main(String[] args) {

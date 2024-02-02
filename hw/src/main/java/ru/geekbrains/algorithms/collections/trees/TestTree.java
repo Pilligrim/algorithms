@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms.trees;
+package ru.geekbrains.algorithms.collections.trees;
 
 public class TestTree {
     public static void main(String[] args) {
