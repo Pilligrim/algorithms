@@ -1,4 +1,4 @@
-package ru.geekbrains.algorithms;
+package ru.geekbrains.algorithms.interview;
 
 import java.util.*;
 import java.util.function.Function;
